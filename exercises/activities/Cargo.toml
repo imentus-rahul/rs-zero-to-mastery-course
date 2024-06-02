@@ -1,0 +1,38 @@
+[package]
+name = "activities"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name="activity"
+path="src/activitylib.rs"
+
+[dependencies]
+chrono = "0.4.19"
+thiserror = "1.0.31"
+
+crossbeam-channel = "*"
+parking_lot="*"
+
+colored = "*"
+
+rand = "*"
+rand_pcg = "*"
+rand_seeder = "*"
+
+vrf = "*"
+hex = "*"
+
+tokio = { version = "1.20.1", features = ["full"] }
+atomic = "0.5.1"
+
+reqwest = { version = "*", features = ["blocking", "json"] }
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+serde_derive = "*"
+
+[build]
+target-dir = ".cargo/target"
+

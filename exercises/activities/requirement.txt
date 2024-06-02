@@ -1,0 +1,46 @@
+
+We can focus initially on the use of XoofffWBCAE_Encipher within XKCP/XKCP (the Github C library) and what the most straightforward path is to running this (plus artificially extending the output with an extract / extended output function).
+
+
+
+My question is largely on the Rust side. I didn't find a full Rust wrapper for all of XKCP; I only found: https://github.com/oconnor663/kangarootwelve_xkcp.rs
+
+
+
+That one a guiding example for a related subset function, but I'm not sure if the easier path for the specific calls I'm interested in for XKCP are best served by running the native XKCP compile and then using Rust FFI/C bindings. 
+
+In practice I'm wondering if those (c)bindgen approaches are fairly straightforward. 
+
+In this case, the actual interaction with XKCP would be entirely through that WBCAE function plus an "extract" method to get additional stateful bytes. And so it's not a whole lot of interaction or complexity I presume.
+
+GitHub
+GitHub - oconnor663/kangarootwelve_xkcp.rs: A Rust wrapper around the XKCP implementation of the KangarooTwelve hash function
+A Rust wrapper around the XKCP implementation of the KangarooTwelve hash function - GitHub - oconnor663/kangarootwelve_xkcp.rs: A Rust wrapper around the XKCP implementation of the KangarooTwelve h...
+
+
+I'm looking for interactive pairing and assistance bootstrapping a Rust project that leverages some other Rust and C Github projects out there.
+
+
+
+I'm interested in quickly getting set up with best practices for including and referencing those third-party libraries. Perhaps as a git submodule, but most importantly referencing these in a way that Rust/cargo knows how to transitively build/test/benchmark/include those in somewhat of an elegant way.
+
+
+
+Some libraries are C libraries and so part of this also involves knowing how to write very basic wrapper code to let Rust interact with those.
+
+
+
+I include Docker expertise in the skill set because some basic knowledge of Docker or using containers will help craft a container that comes with all of its prerequisites. Likely I'll go with the Rust nightly and will want to include CPU optimisations.
+
+
+
+Also this involves some mentoring and guidance about using the Rust foundations. I can likely pick up the concepts pretty quickly in an interactive and pairing setup. I don't mind differences in time zone.
+
+
+
+The number of external libraries I'll want to interface with is pretty small - say four to six. And then the number of functions to invoke per each is pretty small too, like about two or three at most. And the way in which I'll want to interface just involves using those to operate on shared buffers. It will be a bonus to cover some interesting ways to use threads.
+
+
+The experience of mentorship or ongoing development can definitely continue beyond this scope although for the immediate future the best way to showcase this possibility is to work interactively on some basic setup and guidance.
+
+Limit: 5 hrs/week
